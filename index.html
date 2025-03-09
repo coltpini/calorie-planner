@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" type="module"></script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Calorie Calculator</legend>
+      <ol>
+        <li>
+          <input type="radio" checked name="gender" id="male" value="male" />
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" value="female" />
+          <label for="female">Female</label>
+        </li>
+        <li>
+          <input name="height" type="text" id="height" value=6'2" />
+          <label for="height">Height:</label>
+        </li>
+        <li>
+          <input name="weight" type="number" id="weight" value="205" />
+          <label for="weight">Weight:</label>
+        </li>
+        <li>
+          <input name="age" type="number" id="age" value="41" />
+          <label for="age">Age:</label>
+        </li>
+        <li>
+          <input name="loss" type="number" id="loss" value="2" />
+          <label for="loss">Desired loss per week:</label>
+        </li>
+      </ol>
+
+      <p><b>BMR:</b><em class="bmr"></em></p>
+      <p><b>Target:</b><em class="target"></em></p>
+    </fieldset>
+  </body>
+</html>
