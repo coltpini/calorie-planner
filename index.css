@@ -1,5 +1,27 @@
-fieldset li {
+:root {
+  --color-white: #ffffff;
+  --color-blue-100: #f9fcff;
+  
+  
+  --bg-color-100: var(--color-white);
+  --bg-color-200: var(--color-blue-100);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+fieldset ol li {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar a-day {
+  flex: 1 0 14%;
 }

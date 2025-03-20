@@ -4,20 +4,44 @@ class FoodIntake extends SimpleElement {
   styles = css`
     :host {
       display: block;
+      margin: 0.3em;
+      padding: 0;
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    h3 {
+      font-size: 0.8em;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      margin: 0;
     }
   `;
 
   markup = html`
     <h3></h3>
-    <input type="checkbox" />
-    <label>👆</label>
-    <p></p>
-    <input type="checkbox" />
-    <label>👇🏼</label>
+    <ul>
+      <li>🦧</li>
+      <li>👆</li>
+      <p></p>
+      <li>👇🏼</li>
+      <li>🚫</li>
+    </ul>
   `;
 
   properties = {
-    calorie: { type: String },
+    amount: { type: String },
     label: { type: String },
   };
 
@@ -32,11 +56,11 @@ class FoodIntake extends SimpleElement {
   }
 
   static get observedAttributes() {
-    return ["calorie", "label"];
+    return ["amount", "label"];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "calorie") {
+    if (name === "amount") {
       this.elements.p.innerHTML = `${newValue}`;
     }
     if (name === "label") {

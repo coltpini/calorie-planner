@@ -30,13 +30,32 @@
           <label for="age">Age:</label>
         </li>
         <li>
-          <input name="loss" type="number" id="loss" value="2" />
+          <input name="loss" type="number" id="loss" value="1" />
           <label for="loss">Desired loss per week:</label>
+        </li>
+        <li>
+          <select name="movement" id="movement" value="1">
+            <option value="1">Sedentary</option>
+            <option value="1.2">Light Movement</option>
+            <option value="1.4">Moderate Movement</option>
+            <option value="1.6">Extensive Movement</option>
+          </select>
+          <label for="movement">Movement Level:</label>
         </li>
       </ol>
 
       <p><b>BMR:</b><em class="bmr"></em></p>
       <p><b>Target:</b><em class="target"></em></p>
+      <p>
+        <ul>
+          <li><b>Sedentary</b>: Little or no movement (0-1 METs) very few times a day</li>
+          <li><b>Light Movement</b>: Light intensity activity (1-3 METs) regularly in a day</li>
+          <li><b>Moderate Movement</b>: Moderate-intensity movement (3-6 METs) regularly in a day</li>
+          <li><b>Extensive Movement</b>: Moderate movement for much of the day or high intensity movement (6+ METs) regularly in a day</li>
+        </ul>
+      </p>
+      <p>Workout is any effort that is Zone 2 HR or higher for more than 10 min.</p>
     </fieldset>
+    <section class="calendar"></section>
   </body>
 </html>

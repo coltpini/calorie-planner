@@ -2,12 +2,13 @@ import "./elements/a-day.js";
 import { stiva } from "./utils/stiva.js";
 import { getBMR, heightInputToCM } from "./utils/funcs.js";
 
-const gender = document.querySelector("input[name='gender']:checked");
+const calendar = document.querySelector(".calendar");
 const weight = document.querySelector("#weight");
 const height = document.querySelector("#height");
 const age = document.querySelector("#age");
 const loss = document.querySelector("#loss");
 const target = document.querySelector(".target");
+const movement = document.querySelector("#movement");
 const BMR = document.querySelector(".bmr");
 
 const days = 30;
@@ -20,10 +21,12 @@ const change = () =>
 for (let i = 0; i < days; i++) {
   const day = document.createElement("a-day");
   day.setAttribute("date", `${i + 1}`);
-  document.body.appendChild(day);
+
+  calendar.appendChild(day);
 
   stiva.listen("calorie-changed", (e) => {
     day.setAttribute("calorie", e.cals.target);
+    day.setAttribute("weight", `${Math.floor(weight.value / 2)} oz`);
   });
 }
 
@@ -39,8 +42,10 @@ const getCals = () => {
   const w = weight.value;
   const h = height.value;
   const a = age.value;
-  const BMR = getBMR(g, w, h, a);
-  const target = Math.round(BMR - (loss.value * 3000) / 7);
+  const m = movement.value;
+  const caloriesPerPound = 3500;
+  const BMR = Math.floor(getBMR(g, w, h, a, m));
+  const target = Math.floor(BMR - (loss.value * caloriesPerPound) / 7);
   return {
     target,
     BMR,
