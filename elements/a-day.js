@@ -5,11 +5,12 @@ class ADay extends SimpleElement {
   styles = css`
     :host {
       display: inline-block;
-      border: 0.2em solid var(--bg-color-100);
+      xborder: 0.2em solid var(--bg-color-100);
       xbackground-color: var(--bg-color-200);
       padding: 2em;
       min-width: 8em;
       max-width: 12em;
+      font-size: 1.4em;
     }
     h2 {
       margin: 0;
@@ -18,6 +19,11 @@ class ADay extends SimpleElement {
       display: flex;
       flex-direction: column;
       gap: 10px;
+    }
+    @media print {
+      :host {
+        font-size: 0.6em;
+      }
     }
   `;
 

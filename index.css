@@ -11,7 +11,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-fieldset ol li {
+fieldset li {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -24,4 +24,14 @@ fieldset ol li {
 
 .calendar a-day {
   flex: 1 0 14%;
+}
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
 }

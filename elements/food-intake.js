@@ -22,21 +22,33 @@ class FoodIntake extends SimpleElement {
     }
     li {
       text-align: center;
+      font-size: 1.6em;
     }
     p {
       text-align: center;
       margin: 0;
+    }
+    .health.hide {
+      display: none;
     }
   `;
 
   markup = html`
     <h3></h3>
     <ul>
-      <li>🦧</li>
+      <li>🥴</li>
       <li>👆</li>
       <p></p>
       <li>👇🏼</li>
       <li>🚫</li>
+    </ul>
+    <ul class="health">
+      <li>🥗</li>
+      <li>🍑</li>
+      <li>🌾</li>
+      <li>🍖</li>
+      <li>🧀</li>
+      <li>🍫</li>
     </ul>
   `;
 
@@ -48,6 +60,7 @@ class FoodIntake extends SimpleElement {
   selectors = {
     label: { selector: "h3" },
     p: { selector: "p" },
+    health: { selector: ".health" },
   };
 
   constructor() {
@@ -65,6 +78,8 @@ class FoodIntake extends SimpleElement {
     }
     if (name === "label") {
       this.elements.label.innerHTML = `${newValue}`;
+      if (newValue.match("(water|workout)").length > 0)
+        this.elements.health.classList.toggle("hide");
     }
   }
 }

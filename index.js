@@ -11,7 +11,7 @@ const target = document.querySelector(".target");
 const movement = document.querySelector("#movement");
 const BMR = document.querySelector(".bmr");
 
-const days = 30;
+const days = 7;
 
 const change = () =>
   stiva.update("calorie-changed", (cals) => ({
